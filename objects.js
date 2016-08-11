@@ -51,6 +51,7 @@ var stockCar = {
         Finally, invoke your new function while passing in the `plainPerson` object and additional agrument values, then store the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just the value at `name`, and just the value at `age`.
  */
 
+//MY WORK
 var plainPerson = {};
 
 function buildPerson(person, nameString, age){
@@ -84,6 +85,69 @@ console.log(buildPerson(plainPerson, "Coco", 26));
             ...
  */
 
+//MY WORK
+var arrayOfObjects = [
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
+
+function printProcessedOrders(orders){
+ for (var i=0; i < orders.length; i++){
+    console.log(orders[i].id, orders[i].date, orders[i].total);
+    /*var newOrders = orders[i].id + orders[i].date + orders[i].total;*/
+ }
+   /* return newOrders;*/
+ }
+printProcessedOrders(arrayOfObjects);
+/*console.log(printProcessedOrders(arrayOfObjects));*/
 
 /*
     # Addition with an object
@@ -96,6 +160,18 @@ console.log(buildPerson(plainPerson, "Coco", 26));
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
 
+var sumObj = {};
+
+sumObj.a = 5;
+sumObj.b =9;
+sumObj.result = undefined;
+
+function objectAddition(object){
+    object.result = object.a + object.b;
+    return object;
+}
+
+console.log(objectAddition(sumObj));
 
 /*
     # Print sum function and add as new key-value
