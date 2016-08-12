@@ -207,7 +207,15 @@ console.log(printObj(sumObj));
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
 
+plainBox = {};
 
+function putInPlainBox(box){
+    for(var i=0; i<box.length; i++){
+        return box[i];
+    }
+}
+
+console.log(putInPlainBox(plainBox));
 /*
     # Detecting transmission
         Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
