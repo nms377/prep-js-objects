@@ -173,6 +173,12 @@ function objectAddition(object){
 
 console.log(objectAddition(sumObj));
 
+sumObj.a = 10;
+sumObj.b =2000;
+sumObj.result = undefined;
+
+console.log(objectAddition(sumObj));
+
 /*
     # Print sum function and add as new key-value
         Declare a new function named printObj and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
@@ -187,6 +193,12 @@ console.log(objectAddition(sumObj));
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
 
+function printObj(object){
+        object.output = object.a + ' + ' + object.b + ' = '+ object.result;
+        return object.output;
+}
+
+console.log(printObj(sumObj));
 
 /*
     # Putting stuff in `plainBox`
