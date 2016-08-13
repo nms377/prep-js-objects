@@ -308,6 +308,14 @@ console.log(isAutomaticTransmission);
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect your results. Consider using `plainPerson` as your driver.
  */
 
+function addDriver(obj, person){//this will take 2 objects
+    obj.driver = person;
+
+    return obj;
+}
+
+var stockCarWithDriver = addDriver(stockCar, plainPerson.name);
+console.log(stockCarWithDriver);
 
 /*
     # Final Boss
@@ -342,3 +350,17 @@ console.log(isAutomaticTransmission);
         'Victor, age 19, is riding dirty!'
  */
 
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+
+function addPassengers(car, names, ages){ //will take an object, an array of names, and an array of ages
+    for(var i=0; i<names.length; i++){
+        var newList = {};
+        buildPerson(newList, names[i], ages[i]); //will take an object, an array of names, and an array of ages
+        car.passengers.push(newList);
+    }
+    return car;
+}
+
+console.log(addPassengers(stockCar, passengerList, passengerAges));
