@@ -7,12 +7,23 @@
             - Add a property named `contents` and set it to be an empty array.
  */
 
+//MY WORK
 var plainBox = {};
 
 plainBox.color = "violet";
 plainBox.size = 5;
 plainBox.contents = [];
 
+console.log(plainBox);
+
+//CLASS 
+
+var plainBox = {};
+plainBox.color = {};
+plainBox.size = 10;
+plainBox.contents = [];
+
+console.log(plainBox);
 /*
     # An object with properties declared line by line
 
@@ -37,6 +48,12 @@ var stockCar = {
     passengers: [],
 };
 
+console.log(stockCar);
+console.log(stockCar.model);
+console.log(stockCar.year);
+console.log(stockCar.automaticTransmission);
+console.log(stockCar.driver);
+console.log(stockCar.passengers);
 /*
     Add new property inside a function
 
@@ -62,6 +79,24 @@ function buildPerson(person, nameString, age){
 }
 
 console.log(buildPerson(plainPerson, "Coco", 26));
+
+//CLASS WORK
+
+var plainPerson = {};
+
+function buildPerson(person, nameString, age){ //this will take in an object, string, number
+    person.name = nameString;
+    person.age = age;
+
+    return person;
+}
+
+var completePerson = buildPerson(plainPerson, 'Victor', 25); //when you invoke the function is when you add real data (i.e. plainPerson)
+
+console.log(completePerson);
+
+// Best practices: consistent naming conventions, placing comments for clarification
+
 /*
     # Display values of objects that are inside an array
         Declare a new variable named `arrayOfObjects` and set it to be [this array of objects](https://gist.github.com/sgnl/958adf99007329d2e4ff).
@@ -141,8 +176,13 @@ var arrayOfObjects = [
 
 function printProcessedOrders(orders){
  for (var i=0; i < orders.length; i++){
-    console.log(orders[i].id, orders[i].date, orders[i].total);
+    /*console.log("id: "+orders[i].id, orders[i].date, orders[i].total);*/
     /*var newOrders = orders[i].id + orders[i].date + orders[i].total;*/
+ //CLASS WORK
+    console.log("=====");
+    console.log("id: " + orders[i].id);
+    console.log("purchase date: " + orders[i].date);
+    console.log("total: " + orders[i].total);
  }
    /* return newOrders;*/
  }
@@ -159,6 +199,12 @@ printProcessedOrders(arrayOfObjects);
 
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
+//CLASS WORK
+/*var sumObj = {
+    a: 7,
+    b: 11,
+    result: undefined
+};*/
 
 var sumObj = {};
 
@@ -193,7 +239,8 @@ console.log(objectAddition(sumObj));
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
 
-function printObj(object){
+function printObj(object){//this will take in an object
+        /*return object.a + ' + ' + object.b + ' = '+ object.result;*/
         object.output = object.a + ' + ' + object.b + ' = '+ object.result;
         return object.output;
 }
@@ -207,15 +254,29 @@ console.log(printObj(sumObj));
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
 
-plainBox = {};
+//MY WORK
 
-function putInPlainBox(box){
+/*function putInPlainBox(box){
     for(var i=0; i<box.length; i++){
-        return box[i];
+        return plainBox[i];
     }
 }
 
-console.log(putInPlainBox(plainBox));
+console.log(putInPlainBox(plainBox));*/
+
+//CLASS WORK
+
+function putInPlainBox(box){
+    for(var i=0; i<10; i++){
+        var random = Math.floor((Math.random()*20));
+        box.contents.push(random);
+    }
+    return box;
+}
+
+var plainBoxResult = putInPlainBox(plainBox);
+console.log(plainBoxResult);
+console.log(plainBoxResult.contents);
 /*
     # Detecting transmission
         Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
@@ -225,6 +286,18 @@ console.log(putInPlainBox(plainBox));
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
 
+//CLASS WORK
+
+function detectingTransmission(obj){
+    if(obj.automaticTransmission === true){
+        return "It's automatic and no static..yaya";
+    } else {
+        return "Tokyo drift desu yo!";
+        }
+}
+
+var isAutomaticTransmission = detectingTransmission(stockCar);
+console.log(isAutomaticTransmission);
 
 /*
     # Who's driving this thing?!
